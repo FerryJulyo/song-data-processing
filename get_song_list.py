@@ -43,5 +43,8 @@ def list_all_objects(bucket, prefix, output_file_path):
     print(f'File information has been written to {output_file_path}')
 
 # List all objects and save to files
-list_all_objects(bucket, 'OKE/song-file/', 'D:\\SONG\\20250324_OKE.txt')
-list_all_objects(bucket, 'song-file/', 'D:\\SONG\\20250324.txt')
+today_str = datetime.now().strftime('%Y%m%d')
+
+# Gunakan untuk nama file output
+list_all_objects(bucket, 'OKE/song-file/', f'D:\\SONG\\{today_str}_OKE.txt')
+list_all_objects(bucket, 'song-file/', f'D:\\SONG\\{today_str}.txt')
